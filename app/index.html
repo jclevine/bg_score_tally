@@ -16,8 +16,7 @@
     <div>
       <p class="select-header">Num. of Players:</p>
       <select id="num_players">
-        <option value="1">1</option>
-        <option value="2">2</option>
+        <option ng-repeat="i in numPlayers" value="{{i}}">{{i}}</option>
       </select>
     </div>
   </div>
@@ -31,5 +30,6 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+  <script src="lib/underscore/underscore.js"></script>
 </body>
 </html>

@@ -18,5 +18,7 @@ bgScoreTallyModule.factory("SelectionService", function() {
               }
              ]
   };
+
+  selectionService.numPlayers = _.range(1, 11);
   return selectionService;
 });
