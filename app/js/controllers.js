@@ -2,10 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
-
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+angular.module('BgScoreTally.controllers', []).
+  controller("SelectionCtrl", ["$scope", "SelectionService", function($scope, SelectionService) {
+		$scope.selections = SelectionService.selections;
+	}]);

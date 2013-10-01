@@ -1,19 +1,26 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="BgScoreTally">
 <head>
   <meta charset="utf-8">
   <title>Boardgame Score Tally</title>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
-
-  <div ng-view></div>
-
-  <div>Angular seed app: v<span app-version></span></div>
+  <div ng-controller="SelectionCtrl">
+    <div class="selections">
+      <p class="select-header">Game:</p>
+      <select id="game">
+        <option ng-repeat="game in selections.games" value="{{game.value}}">{{game.label}}</option>
+     </select>
+    </div>
+    <div>
+      <p class="select-header">Num. of Players:</p>
+      <select id="num_players">
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </div>
+  </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
