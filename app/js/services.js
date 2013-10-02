@@ -2,9 +2,6 @@
 
 /* Services */
 
-
-// Demonstrate how to register services
-// In this case it is a simple value service.
 var bgScoreTallyModule = angular.module('BgScoreTally.services', []);
 bgScoreTallyModule.factory("SelectionService", function() {
   var selectionService = {};

@@ -5,20 +5,31 @@
   <title>Boardgame Score Tally</title>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body>
-  <div ng-controller="SelectionCtrl">
+<body ng-controller="SelectionCtrl">
+  <div>
     <div class="selections">
       <p class="select-header">Game:</p>
-      <select id="game">
+      <select id="game" ng-model="selectedGame" ng-change="updateGame(selectedGame)">
         <option ng-repeat="game in selections.games" value="{{game.value}}">{{game.label}}</option>
      </select>
     </div>
-    <div>
+    <div class="selections">
       <p class="select-header">Num. of Players:</p>
-      <select id="num_players">
+      <select id="num_players" ng-model="selectedNumPlayers" ng-change="updateNumPlayers(selectedNumPlayers)">
         <option ng-repeat="i in selections.numPlayers" value="{{i}}">{{i}}</option>
       </select>
     </div>
+  </div>
+
+  <div class="score-board">
+
+    <table>
+      <tr ng-repeat="i in getSelectedNumPlayers()">
+        <td>Something.</td>
+        <td>Something.</td>
+        <td>Something.</td>
+      </tr>
+    </table>
   </div>
 
   <!-- In production use:
