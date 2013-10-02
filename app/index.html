@@ -9,8 +9,8 @@
   <div>
     <div class="selections">
       <p class="select-header">Game:</p>
-      <select id="game" ng-model="selectedGame" ng-change="updateGame(selectedGame)">
-        <option ng-repeat="game in selections.games" value="{{game.value}}">{{game.label}}</option>
+      <select id="game" ng-model="selectedGame" ng-change="updateGame(selectedGame)" ng-init="selectedGame=0">
+        <option ng-repeat="game in selections.games" value="{{game.num_scores}}">{{game.label}}</option>
      </select>
     </div>
     <div class="selections">
@@ -25,9 +25,7 @@
 
     <table>
       <tr ng-repeat="i in getSelectedNumPlayers()">
-        <td><input></input></td>
-        <td><input></input></td>
-        <td><input></input></td>
+        <td ng-repeat="i in getNumOfScores(selectedGame)" ng-model="value1"><input></input></td>
       </tr>
     </table>
   </div>

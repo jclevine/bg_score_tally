@@ -9,10 +9,12 @@ bgScoreTallyModule.factory("SelectionService", function() {
   selectionService.selections = {
     "games": [
               {"label": "Agricola",
-               "value": "agricola"
+               "value": "agricola",
+               "num_scores": 5
               },
               {"label": "7 Wonders",
-               "value": "7-wonders"
+               "value": "7-wonders",
+               "num_scores": 8
               }
              ],
      "numPlayers": _.range(1, 11)

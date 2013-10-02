@@ -8,4 +8,7 @@ angular.module('BgScoreTally.controllers', []).
     $scope.getSelectedNumPlayers = function() {
       return new Array(parseInt($scope.selectedNumPlayers));
     }
+    $scope.getNumOfScores = function() {
+      return new Array(parseInt($scope.selectedGame));
+    }
 }]);
