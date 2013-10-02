@@ -15,7 +15,7 @@
     </div>
     <div class="selections">
       <p class="select-header">Num. of Players:</p>
-      <select id="num_players" ng-model="selectedNumPlayers" ng-change="updateNumPlayers(selectedNumPlayers)">
+      <select id="num_players" ng-model="selectedNumPlayers" ng-init="selectedNumPlayers=0">
         <option ng-repeat="i in selections.numPlayers" value="{{i}}">{{i}}</option>
       </select>
     </div>
@@ -25,9 +25,9 @@
 
     <table>
       <tr ng-repeat="i in getSelectedNumPlayers()">
-        <td>Something.</td>
-        <td>Something.</td>
-        <td>Something.</td>
+        <td><input></input></td>
+        <td><input></input></td>
+        <td><input></input></td>
       </tr>
     </table>
   </div>
