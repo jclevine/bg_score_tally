@@ -4,18 +4,19 @@
   <meta charset="utf-8">
   <title>Boardgame Score Tally</title>
   <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="lib/foundation/foundation.min.css"/>
 </head>
 <body ng-controller="SelectionCtrl">
   <div>
     <div class="selections">
       <p class="select-header">Game:</p>
-      <select id="game" ng-model="selectedGame" ng-change="updateGame(selectedGame)" ng-init="selectedGame=0">
+      <select id="game_select" ng-model="selected.game" ng-change="updateGame(selected.game)" ng-init="selected.game=0">
         <option ng-repeat="game in selections.games" value="{{game.num_scores}}">{{game.label}}</option>
      </select>
     </div>
     <div class="selections">
       <p class="select-header">Num. of Players:</p>
-      <select id="num_players" ng-model="selectedNumPlayers" ng-init="selectedNumPlayers=0">
+      <select id="num_players_select" ng-model="selected.num_players" ng-init="selected.num_players=0">
         <option ng-repeat="i in selections.numPlayers" value="{{i}}">{{i}}</option>
       </select>
     </div>
@@ -25,7 +26,7 @@
 
     <table>
       <tr ng-repeat="i in getSelectedNumPlayers()">
-        <td ng-repeat="i in getNumOfScores(selectedGame)" ng-model="value1"><input></input></td>
+        <td ng-repeat="i in getNumOfScores(selected.game)" ng-model="value1"><input></input></td>
       </tr>
     </table>
   </div>
