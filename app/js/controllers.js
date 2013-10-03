@@ -9,6 +9,9 @@ angular.module('BgScoreTally.controllers', []).
       return new Array(parseInt($scope.selected.num_players));
     };
     $scope.getScoreTypeNames = function() {
-      return $scope.selections.games[$scope.selected.game].score_type_names;
+      var selectedGame = $scope.selected.game;
+      if (selectedGame != -1) {
+        return $scope.selections.games[selectedGame].score_type_names;
+      }
     };
 }]);

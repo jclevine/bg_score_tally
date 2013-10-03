@@ -11,7 +11,7 @@
   <div>
     <div class="selections">
       <p class="select-header">Game:</p>
-      <select id="game_select" ng-model="selected.game" ng-init="selected.game=0">
+      <select id="game_select" ng-model="selected.game" ng-init="selected.game=-1">
         <option ng-repeat="game in selections.games" value="{{$index}}">{{game.label}}</option>
      </select>
     </div>
