@@ -26,6 +26,7 @@
 
     <table>
       <tr ng-repeat="i in getSelectedNumPlayers()">
+        <td>Player {{$index + 1}}</td>
         <td ng-repeat="i in getNumOfScores(selected.game)" ng-model="value1"><input></input></td>
       </tr>
     </table>
