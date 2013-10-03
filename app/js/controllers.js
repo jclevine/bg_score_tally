@@ -20,13 +20,13 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     }
   };
 
+  // Don't use any intermediate variables to point to $scope attributes because it doesn't work for whatever reason.
   $scope.updateTotal = function() {
     var newScore = this.score;
 
     if (!$scope.scores) {
       $scope.scores = {};
     }
-    // var otherScoresOnRow = $scope.scores[this.$parent.$index];
     if (!$scope.scores[this.$parent.$index]) {
       $scope.scores[this.$parent.$index] = {};
     }
@@ -43,8 +43,9 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
 
     $scope.totalScores[this.$parent.$index] = totalScore;
   }
-}]);
 
-//bgScoreTally.controller("TotalCalcCtrl", ["$scope", function($scope) {
-//  alert($scope.state.currentRow);
-//}]);
+  $scope.resetTotalScores = function() {
+    $scope.scores = {};
+    $scope.totalScores = [];
+  }
+}]);
