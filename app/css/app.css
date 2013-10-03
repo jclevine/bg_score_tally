@@ -47,3 +47,7 @@ div.score-board {
 .player-name {
   margin: 0px !important;
 }
+
+.score-field {
+  width: 50px;
+}
