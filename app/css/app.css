@@ -42,3 +42,8 @@ div.selections {
 div.score-board {
   clear: both;
 }
+
+/* Must be important to override foundation.css. */
+.player-name {
+  margin: 0px !important;
+}
