@@ -26,10 +26,18 @@
   <div class="score-board">
 
     <table border=1>
-      <tr ng-repeat="i in getSelectedNumPlayers()">
-        <td><input tabindex="{{$index + 1}}" class="player-name round label" type="text" value="Player {{$index + 1}}"/></td>
-        <td ng-repeat="i in getNumOfScores(selected.game)" ng-model="value1"><input class="score-field"></input></td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Player Name</th>
+          <th ng-repeat="i in getNumOfScores(selected.game)">Score {{$index + 1}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="i in getSelectedNumPlayers()">
+          <td><input tabindex="{{$index + 1}}" class="player-name round label" type="text" value="Player {{$index + 1}}"/></td>
+          <td ng-repeat="i in getNumOfScores(selected.game)" ng-model="value1"><input class="score-field"></input></td>
+        </tr>
+      </tbody>
     </table>
   </div>
 
