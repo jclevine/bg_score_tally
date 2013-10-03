@@ -43,9 +43,14 @@ div.score-board {
   clear: both;
 }
 
+.score-board-table {
+  border: 1px solid black;
+}
+
 /* Must be important to override foundation.css. */
 .player-name {
   margin: 0px !important;
+  background-color: SpringGreen !important;
 }
 
 .score-field {
@@ -53,11 +58,18 @@ div.score-board {
   text-align: center;
 }
 
-.score-cell {
+.score-cell,
+.heading,
+.total-score {
   text-align: center;
+  border: 1px solid black;
+  background-color: LightSkyBlue;
 }
 
 .heading {
-  text-align: center;
-}
+  background-color: Gainsboro;
+ }
+
+.player-name-cell {
+  background-color: LightSkyBlue;
 }

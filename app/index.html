@@ -25,17 +25,19 @@
 
   <div class="score-board">
 
-    <table border=1>
+    <table class="score-board-table">
       <thead>
         <tr>
           <th class="heading">Player Name</th>
           <th class="heading" ng-repeat="scoreTypeName in getScoreTypeNames()">{{scoreTypeName}}</th>
+          <th class="heading">Total Score</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="i in getSelectedNumPlayers()">
-          <td><input tabindex="{{$index + 1}}" class="player-name round label" type="text" value="Player {{$index + 1}}"/></td>
-          <td class="score-cell" ng-repeat="i in getScoreTypeNames()" ng-model="value1"><input class="score-field"></input></td>
+        <tr ng-repeat="i in getSelectedNumPlayers($index)">
+          <td class="player-name-cell"><input tabindex="{{$index + 1}}" class="player-name round label" type="text" value="Player {{$index + 1}}"/></td>
+          <td class="score-cell" ng-repeat="scoreTypeName in getScoreTypeNames()"><input class="score-field" ng-model="score" ng-change="updateTotal()"></input></td>
+          <td class="total-score"><h3>{{totalScores[$index]}}</h3></td>
         </tr>
       </tbody>
     </table>
