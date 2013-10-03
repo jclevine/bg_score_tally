@@ -50,4 +50,14 @@ div.score-board {
 
 .score-field {
   width: 50px;
+  text-align: center;
+}
+
+.score-cell {
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+}
 }
