@@ -5,6 +5,7 @@
   <title>Boardgame Score Tally</title>
   <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="lib/foundation/foundation.min.css"/>
+  <link rel="stylesheet" href="lib/foundation/foundation_icons_all/foundation_icons_general/stylesheets/general_foundicons.css"/>
   <link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body ng-controller="SelectionCtrl">
@@ -40,6 +41,11 @@
           <td class="total-score"><h3>{{totalScores[$index]}}</h3></td>
         </tr>
       </tbody>
+      <tfoot>
+        <tr>
+          <td colspan={{getScoreTypeNames()}}><button class="add-player-button" ng-click="addPlayer()"><i class="foundicon-plus">Add Player</i></button></td>
+        </tr>
+      </tfoot>
     </table>
   </div>
 

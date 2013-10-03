@@ -48,4 +48,8 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     $scope.scores = {};
     $scope.totalScores = [];
   }
+
+  $scope.addPlayer = function() {
+    $scope.selected.num_players++;
+  }
 }]);
