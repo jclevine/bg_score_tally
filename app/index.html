@@ -13,13 +13,14 @@
     <div class="selections">
       <p class="select-header">Game:</p>
       <select id="game_select" ng-model="selected.game" ng-init="selected.game=-1" ng-change="resetTotalScores()">
+        <!-- Not using ng-options because for some reason it doesn't set the ng-model if I do. -->
         <option ng-repeat="game in selections.games" value="{{$index}}">{{game.label}}</option>
      </select>
     </div>
     <div class="selections">
       <p class="select-header">Num. of Players:</p>
       <select id="num_players_select" ng-model="selected.num_players" ng-init="selected.num_players=0"
-       ng-options="i for i in selections.numPlayers">
+              ng-options="i for i in selections.numPlayers">
       </select>
     </div>
   </div>
