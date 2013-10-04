@@ -18,8 +18,8 @@
     </div>
     <div class="selections">
       <p class="select-header">Num. of Players:</p>
-      <select id="num_players_select" ng-model="selected.num_players" ng-init="selected.num_players=0">
-        <option ng-repeat="i in selections.numPlayers" value="{{i}}">{{i}}</option>
+      <select id="num_players_select" ng-model="selected.num_players" ng-init="selected.num_players=0"
+       ng-options="i for i in selections.numPlayers">
       </select>
     </div>
   </div>
