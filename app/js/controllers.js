@@ -17,11 +17,11 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     }
   };
 
-  $scope.updatePlayerNumber = function() {
-    var morePlayersAdded = $scope.selected.numPlayers > $scope.playerScores.length;
-    var fewerPlayersExist = $scope.selected.numPlayers < $scope.playerScores.length;
+  $scope.updatePlayerNumber = function(selectedNumPlayers) {
+    var morePlayersAdded = selectedNumPlayers > $scope.playerScores.length;
+    var fewerPlayersExist = selectedNumPlayers < $scope.playerScores.length;
     if (morePlayersAdded) {
-      for (var i = $scope.playerScores.length; i < $scope.selected.numPlayers; ++i) {
+      for (var i = $scope.playerScores.length; i < selectedNumPlayers; ++i) {
         $scope.playerScores[i] = new Array($scope.selections.games[$scope.selected.game].score_type_names.length);
       }
     }

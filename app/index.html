@@ -20,7 +20,7 @@
     <div class="selections">
       <p class="select-header">Num. of Players:</p>
       <select id="num_players_select" ng-model="selected.numPlayers"
-              ng-options="i for i in selections.numPlayers" ng-change="updatePlayerNumber()">
+              ng-options="i for i in selections.numPlayers" ng-change="updatePlayerNumber(selected.numPlayers)">
       </select>
     </div>
   </div>
