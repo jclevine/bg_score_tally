@@ -27,7 +27,7 @@
 
   <div class="score-board">
 
-    <table class="score-board-table">
+    <table class="score-board-table" style="border: none;">
       <thead>
         <tr>
           <th class="heading">Player Name</th>
@@ -41,12 +41,12 @@
           <td class="player-name-cell"><input tabindex="{{$index + 1}}" class="player-name round label" type="text" value="Player {{$index + 1}}"/></td>
           <td class="score-cell" ng-repeat="scoreCount in getScoreTypeNames(selected.game)"><input class="score-field" ng-model="playerScores[$parent.$index][$index]" ng-change="updateTotal($parent.$index)"></input></td>
           <td class="total-score"><h3>{{totalScores[$index]}}</h3></td>
-          <td class="score-cell"><div class="remove-player-div"><button class="remove-player-button" ng-click="removePlayer($index)"><i class="foundicon-minus">Remove Player</i></button></div></td>
+          <td class="score-cell"><div class="remove-player-div"><button class="remove-player-button round" ng-click="removePlayer($index)"><i class="foundicon-minus">Remove Player</i></button></div></td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
-          <td class="add-player-row" colspan="{{getScoreTypeNames(selected.game).length + 3}}"><div class="add-player-div"><button class="add-player-button" ng-click="addPlayer()"><i class="foundicon-plus">Add Player</i></button></div></td>
+          <td class="add-player-row" colspan="{{getScoreTypeNames(selected.game).length + 3}}"><div class="add-player-div"><button class="add-player-button round" ng-click="addPlayer()"><i class="foundicon-plus">Add Player</i></button></div></td>
         </tr>
       </tfoot>
     </table>

@@ -17,8 +17,6 @@
 
 .menu > li {
   display: inline;
-
-
 }
 
 .menu > li:before {
@@ -45,11 +43,12 @@ div.selections {
 
 div.score-board {
   clear: both;
-  margin: 10px 10px;
+  /*margin: 10px 10px;*/
 }
 
 .score-board-table {
-  border: 1px solid black;
+  border: none;
+  background: LightSkyBlue;
 }
 
 /* Must be important to override foundation.css. */
@@ -67,8 +66,14 @@ div.score-board {
 .heading,
 .total-score {
   text-align: center;
-  border: 1px solid black;
+  border: none;
+  padding: 0px 10px;
   background-color: LightSkyBlue;
+}
+
+.heading {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .heading {
@@ -81,10 +86,12 @@ div.score-board {
 
 .add-player-button {
   margin-left: 20px;
+  padding: 5px 8px;
 }
 
 .remove-player-button {
   background-color: IndianRed;
+  padding: 3px 3px;
 }
 
 .remove-player-button:hover {
@@ -93,6 +100,7 @@ div.score-board {
 
 .add-player-row {
   background-color: LightSkyBlue;
+  text-align: center;
 }
 
 .add-player-div,
