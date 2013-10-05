@@ -10,8 +10,7 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
   $scope.playerScores = [];
   $scope.totalScores = [];
 
-  $scope.getScoreTypeNames = function() {
-    var selectedGame = $scope.selected.game;
+  $scope.getScoreTypeNames = function(selectedGame) {
     if (selectedGame != -1) {
       return $scope.selections.games[selectedGame].score_type_names;
     }
