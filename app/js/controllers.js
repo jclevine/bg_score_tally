@@ -27,6 +27,7 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     }
     else if (fewerPlayersExist) {
       $scope.playerScores = $scope.playerScores.slice(0, $scope.selected.numPlayers);
+      $scope.totalScores = $scope.totalScores.slice(0, $scope.selected.numPlayers);
     }
     // Else same number of players. Don't do anything.
   }
@@ -37,6 +38,7 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     for (var i = 0; i < $scope.playerScores.length; ++i) {
       $scope.playerScores[i] = new Array($scope.selections.games[$scope.selected.game].score_type_names.length);
     }
+    $scope.totalScores = new Array($scope.selections.games[$scope.selected.game].score_type_names.length);
   }
 
   $scope.addPlayer = function() {
