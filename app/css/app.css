@@ -17,6 +17,8 @@
 
 .menu > li {
   display: inline;
+
+
 }
 
 .menu > li:before {
@@ -72,4 +74,12 @@ div.score-board {
 
 .player-name-cell {
   background-color: LightSkyBlue;
+}
+
+.remove-player-button {
+  background-color: IndianRed;
+}
+
+.remove-player-button:hover {
+  background-color: Crimson;
 }

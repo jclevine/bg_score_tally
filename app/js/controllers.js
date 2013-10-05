@@ -33,13 +33,24 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     // TODO: jlevine - Make common function.
     $scope.playerScores = new Array($scope.selected.numPlayers);
     for (var i = 0; i < $scope.playerScores.length; ++i) {
-      $scope.playerScores[i] = new Array($scope.selections.games[$scope.selected.game].score_type_names.length)
+      $scope.playerScores[i] = new Array($scope.selections.games[$scope.selected.game].score_type_names.length);
     }
   }
 
   $scope.addPlayer = function() {
-    $scope.selected.num_players++;
+    // TODO: jlevine - See if there's a better way to get this length.
+    $scope.playerScores.push(new Array($scope.selections.games[$scope.selected.game].score_type_names.length));
+    $scope.selected.numPlayers = $scope.playerScores.length;
+    $scope.updateTotal();
   }
+
+  $scope.removePlayer = function(playerIndex) {
+    // TODO: jlevine - See if there's a better way to get this length.
+    $scope.playerScores.splice(playerIndex, 1);
+    $scope.selected.numPlayers--;
+    $scope.updateTotal();
+  }
+
 
   $scope.updatePlayerNumber = function() {
     $scope.playerScores = new Array($scope.selected.numPlayers);
@@ -47,7 +58,5 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
       $scope.playerScores[i] = new Array($scope.selections.games[$scope.selected.game].score_type_names.length);
     }
   }
-
-
 
 }]);
