@@ -43,12 +43,14 @@ div.selections {
 
 div.score-board {
   clear: both;
-  /*margin: 10px 10px;*/
 }
 
 .score-board-table {
   border: none;
   background: LightSkyBlue;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 5px;
 }
 
 /* Must be important to override foundation.css. */
@@ -72,11 +74,6 @@ div.score-board {
 }
 
 .heading {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-}
-
-.heading {
   background-color: Gainsboro;
  }
 
@@ -92,6 +89,7 @@ div.score-board {
 .remove-player-button {
   background-color: IndianRed;
   padding: 3px 3px;
+
 }
 
 .remove-player-button:hover {
@@ -101,9 +99,11 @@ div.score-board {
 .add-player-row {
   background-color: LightSkyBlue;
   text-align: center;
+  padding-top: 0px;
 }
 
 .add-player-div,
 .remove-player-div {
-  height: 40px;
+  height: 20px;
+  margin-bottom: 5px;
 }
