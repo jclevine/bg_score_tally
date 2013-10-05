@@ -62,6 +62,6 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
         totalScore += parseInt(score);
       }
     }
-    $scope.totalScores[studentIndex] = totalScore;
+    $scope.totalScores[studentIndex] = isNaN(totalScore) ? 0 : totalScore;
   };
 }]);
