@@ -17,6 +17,17 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     }
   };
 
+  $scope.updatePlayerNumber = function() {
+    if ($scope.selected.numPlayers > $scope.playerScores.length) {
+      for (var i = $scope.playerScores.length; i < $scope.selected.numPlayers; ++i) {
+        $scope.playerScores[i] = new Array($scope.selections.games[$scope.selected.game].score_type_names.length);
+      }
+    }
+    else if ($scope.selected.numPlayers < $scope.playerScores.length) {
+      $scope.playerScores = $scope.playerScores.slice(0, $scope.selected.numPlayers);
+    }
+  }
+
   // Don't use any intermediate variables to point to $scope attributes because it doesn't work for whatever reason.
   $scope.updateTotal = function() {
     var totalScore = 0;
@@ -35,6 +46,7 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     for (var i = 0; i < $scope.playerScores.length; ++i) {
       $scope.playerScores[i] = new Array($scope.selections.games[$scope.selected.game].score_type_names.length);
     }
+    $scope.updateTotal();
   }
 
   $scope.addPlayer = function() {
@@ -48,15 +60,6 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     // TODO: jlevine - See if there's a better way to get this length.
     $scope.playerScores.splice(playerIndex, 1);
     $scope.selected.numPlayers--;
-    $scope.updateTotal();
-  }
-
-
-  $scope.updatePlayerNumber = function() {
-    $scope.playerScores = new Array($scope.selected.numPlayers);
-    for (var i = 0; i < $scope.playerScores.length; ++i) {
-      $scope.playerScores[i] = new Array($scope.selections.games[$scope.selected.game].score_type_names.length);
-    }
   }
 
 }]);
