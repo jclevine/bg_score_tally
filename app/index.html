@@ -45,7 +45,7 @@
         </tr>
       </tbody>
       <tfoot>
-        <tr>
+        <tr ng-show="isGameSelected">
           <td class="add-player-row" colspan="{{getScoreTypeNames(selected.game).length + 3}}"><div class="add-player-div"><button class="add-player-button round" ng-click="addPlayer()"><i class="foundicon-plus">Add Player</i></button></div></td>
         </tr>
       </tfoot>
