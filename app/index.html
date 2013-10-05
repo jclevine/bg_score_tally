@@ -38,7 +38,7 @@
       <tbody>
         <tr ng-repeat="playerCount in playerScores">
           <td class="player-name-cell"><input tabindex="{{$index + 1}}" class="player-name round label" type="text" value="Player {{$index + 1}}"/></td>
-          <td class="score-cell" ng-repeat="scoreCount in getScoreTypeNames(selected.game)"><input class="score-field" ng-model="playerScores[$parent.$index][$index]" ng-change="updateTotal()"></input></td>
+          <td class="score-cell" ng-repeat="scoreCount in getScoreTypeNames(selected.game)"><input class="score-field" ng-model="playerScores[$parent.$index][$index]" ng-change="updateTotal($parent.$index)"></input></td>
           <td class="total-score"><h3>{{totalScores[$index]}}</h3></td>
           <td><button class="remove-player-button" ng-click="removePlayer($index)"><i class="foundicon-minus">Remove Player</i></button></td>
         </tr>

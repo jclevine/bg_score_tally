@@ -54,14 +54,14 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
   };
 
   // Don't use any intermediate variables to point to $scope attributes because it doesn't work for whatever reason.
-  $scope.updateTotal = function() {
+  $scope.updateTotal = function(studentIndex) {
     var totalScore = 0;
-    for (var i = 0; i < $scope.playerScores[this.$parent.$index].length; ++i) {
-      var score = $scope.playerScores[this.$parent.$index][i];
+    for (var i = 0; i < $scope.playerScores[studentIndex].length; ++i) {
+      var score = $scope.playerScores[studentIndex][i];
       if (score != undefined) {
         totalScore += parseInt(score);
       }
     }
-    $scope.totalScores[this.$parent.$index] = totalScore;
+    $scope.totalScores[studentIndex] = totalScore;
   };
 }]);
