@@ -17,7 +17,7 @@
         <option ng-repeat="game in selections.games" value="{{$index}}">{{game.label}}</option>
      </select>
     </div>
-    <div class="selections">
+    <div class="selections" ng-show="isGameSelected">
       <p class="select-header">Num. of Players:</p>
       <select id="num_players_select" ng-model="selected.numPlayers"
               ng-options="i for i in selections.numPlayers" ng-change="updatePlayerNumber(selected.numPlayers)">

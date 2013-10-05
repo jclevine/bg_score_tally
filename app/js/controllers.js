@@ -9,6 +9,7 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
 
   $scope.playerScores = [];
   $scope.totalScores = [];
+  $scope.isGameSelected = false;
 
   $scope.getScoreTypeNames = function(selectedGame) {
     if (selectedGame != -1) {
@@ -38,6 +39,7 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
       $scope.playerScores[i] = new Array($scope.selections.games[$scope.selected.game].score_type_names.length);
     }
     $scope.totalScores = new Array($scope.selections.games[$scope.selected.game].score_type_names.length);
+    $scope.isGameSelected = true;
   };
 
   $scope.addPlayer = function() {
