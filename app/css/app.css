@@ -1,44 +1,18 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
-
 .select-header {
   padding: 0px;
   display: inline;
 }
 
 div.selections {
-  margin: 10px 30px 10px 30px;
+  margin: 10px 30px -5px 30px;
   padding: 0px 10px;
   float: left;
-  border: 1px solid Gainsboro;
+  border: 1px solid LightSkyBlue;
+  background-color: LightSkyBlue;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
 }
 
 div.score-board {
@@ -50,7 +24,7 @@ div.score-board {
   background: LightSkyBlue;
   border-radius: 5px;
   -moz-border-radius: 5px;
-  padding: 5px;
+  padding: 3px;
 }
 
 /* Must be important to override foundation.css. */
