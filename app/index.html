@@ -12,15 +12,15 @@
   <div>
     <div class="selections">
       <p class="select-header">Game:</p>
-      <select id="game_select" ng-model="selected.game" ng-init="selected.game=-1" ng-change="resetTotalScores()">
+      <select id="game_select" ng-model="selected.game" ng-init="selected.game=-1" ng-change="reset()">
         <!-- Not using ng-options because for some reason it doesn't set the ng-model if I do. -->
         <option ng-repeat="game in selections.games" value="{{$index}}">{{game.label}}</option>
      </select>
     </div>
     <div class="selections">
       <p class="select-header">Num. of Players:</p>
-      <select id="num_players_select" ng-model="selected.num_players" ng-init="selected.num_players=0"
-              ng-options="i for i in selections.numPlayers">
+      <select id="num_players_select" ng-model="selected.numPlayers"
+              ng-options="i for i in selections.numPlayers" ng-change="updatePlayerNumber()">
       </select>
     </div>
   </div>
@@ -36,9 +36,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="i in getSelectedNumPlayers($index)">
+        <tr ng-repeat="playerCount in playerScores">
           <td class="player-name-cell"><input tabindex="{{$index + 1}}" class="player-name round label" type="text" value="Player {{$index + 1}}"/></td>
-          <td class="score-cell" ng-repeat="scoreTypeName in getScoreTypeNames()"><input class="score-field" ng-model="score" ng-change="updateTotal()"></input></td>
+          <td class="score-cell" ng-repeat="scoreCount in getScoreTypeNames()"><input class="score-field" ng-model="playerScores[$parent.$index][$index]" ng-change="updateTotal()"></input></td>
           <td class="total-score"><h3>{{totalScores[$index]}}</h3></td>
         </tr>
       </tbody>
