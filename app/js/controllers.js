@@ -58,12 +58,15 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
   // Don't use any intermediate variables to point to $scope attributes because it doesn't work for whatever reason.
   $scope.updateTotal = function(studentIndex) {
     var totalScore = 0;
-    for (var i = 0; i < $scope.playerScores[studentIndex].length; ++i) {
-      var score = $scope.playerScores[studentIndex][i];
-      if (score != undefined) {
-        totalScore += parseInt(score);
-      }
-    }
+	_.each($scope.selections.games[$scope.selected.game].score_type_names, function(scoreItem, index) {
+		var val = scoreItem.value,
+			amount = parseInt($scope.playerScores[studentIndex][index]),
+			result = 0;
+		if (typeof(amount) === 'number') {
+			result = typeof(val) === 'number' ? val * amount : val(amount);
+			totalScore += isNaN(result) ? 0 : result;
+		}
+    });
     $scope.totalScores[studentIndex] = isNaN(totalScore) ? 0 : totalScore;
   };
 }]);
