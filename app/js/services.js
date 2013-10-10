@@ -129,7 +129,9 @@ bgScoreTallyModule.factory("SelectionService", function() {
 					},
 					{
 						name: "Empty Spaces",
-						value: -1,
+						value: function (amount) {
+							return -amount;
+						},
 					},
 					{
 						// TODO: wilsona - configurable value function opts
@@ -148,19 +150,27 @@ bgScoreTallyModule.factory("SelectionService", function() {
 					},
 					{
 						name: "Fenced Stables",
-						value: 1,
+						value: function (amount) {
+							return amount;
+						},
 					},
 					{
 						name: "Family Members",
-						value: 3,
+						value: function (amount) {
+							return amount * 3;
+						},
 					},
 					{
 						name: "Card Points",
-						value: 1,
+						value: function (amount) {
+							return amount;
+						},
 					},
 					{
 						name: "Bonus Points",
-						value: 1,
+						value: function (amount) {
+							return amount;
+						},
 					},
 				]
             },
@@ -170,7 +180,9 @@ bgScoreTallyModule.factory("SelectionService", function() {
                 "score_type_names": [
 					{
 						name: "Military",
-						value: 1,
+						value: function (amount) {
+							return amount;
+						},
 					},
 					{
 						name: "Coins",
@@ -180,19 +192,27 @@ bgScoreTallyModule.factory("SelectionService", function() {
 					},
 					{
 						name: "Wonder",
-						value: 1,
+						value: function (amount) {
+							return amount;
+						},
 					},
 					{
 						name: "Blue Cards",
-						value: 1,
+						value: function (amount) {
+							return amount;
+						},
 					},
 					{
 						name: "Yellow Cards",
-						value: 1,
+						value: function (amount) {
+							return amount;
+						},
 					},
 					{
 						name: "Purple Cards",
-						value: 1,
+						value: function (amount) {
+							return amount;
+						},
 					},
 					{
 						name: "Green Cards",
