@@ -48,7 +48,7 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     // TODO: jlevine - See if there's a better way to get this length.
     $scope.playerScores.push(new Array($scope.selections.games[$scope.selected.game].score_type_names.length));
     $scope.selected.numPlayers = $scope.playerScores.length;
-    $scope.totalScores.push();
+    $scope.totalScores.push(undefined);
   };
 
   $scope.removePlayer = function(playerIndex) {
