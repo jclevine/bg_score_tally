@@ -13,7 +13,9 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
 
   $scope.getScoreTypeNames = function(selectedGame) {
     if (selectedGame != -1) {
-      return $scope.selections.games[selectedGame].score_type_names;
+      return _.map($scope.selections.games[selectedGame].score_type_names, function(score_type) {
+        return score_type.name;
+      });
     }
   };
 
