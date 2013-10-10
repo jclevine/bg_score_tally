@@ -3,6 +3,7 @@
 /* Services */
 
 var bgScoreTallyModule = angular.module('BgScoreTally.services', []);
+bgScoreTallyModule.value('version', '0.1');
 bgScoreTallyModule.factory("SelectionService", function() {
   var selectionService = {};
   // Get game selection from a AJAX call?
