@@ -13,7 +13,9 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
 
   $scope.getScoreTypeNames = function(selectedGame) {
     if (selectedGame != -1) {
-      return $scope.selections.games[selectedGame].score_type_names;
+      return _.map($scope.selections.games[selectedGame].score_type_names, function(score_type) {
+        return score_type.name;
+      });
     }
   };
 
@@ -46,7 +48,7 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
     // TODO: jlevine - See if there's a better way to get this length.
     $scope.playerScores.push(new Array($scope.selections.games[$scope.selected.game].score_type_names.length));
     $scope.selected.numPlayers = $scope.playerScores.length;
-    $scope.totalScores.push();
+    $scope.totalScores.push(undefined);
   };
 
   $scope.removePlayer = function(playerIndex) {
@@ -58,12 +60,15 @@ bgScoreTally.controller("SelectionCtrl", ["$scope", "SelectionService", function
   // Don't use any intermediate variables to point to $scope attributes because it doesn't work for whatever reason.
   $scope.updateTotal = function(studentIndex) {
     var totalScore = 0;
-    for (var i = 0; i < $scope.playerScores[studentIndex].length; ++i) {
-      var score = $scope.playerScores[studentIndex][i];
-      if (score != undefined) {
-        totalScore += parseInt(score);
-      }
+    _.each($scope.selections.games[$scope.selected.game].score_type_names, function(scoreItem, index) {
+      var val = scoreItem.value,
+      amount = parseInt($scope.playerScores[studentIndex][index]),
+      result = 0;
+    if (typeof(amount) === 'number') {
+      result = val(amount);
+      totalScore += isNaN(result) ? 0 : result;
     }
+    });
     $scope.totalScores[studentIndex] = isNaN(totalScore) ? 0 : totalScore;
   };
 }]);
